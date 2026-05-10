@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(to bottom, #e0f7ff, #f8fcff);
+  color: #083344;
+  line-height: 1.6;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Chelonia_mydas_is_going_for_the_air_edit.jpg/1280px-Chelonia_mydas_is_going_for_the_air_edit.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(3, 105, 161, 0.65), rgba(8, 47, 73, 0.75));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  color: white;
+  padding: 30px;
+  animation: fadeUp 1s ease;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 18px;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 28px;
+  color: #e0f2fe;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(2, 132, 199, 0.18);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin: 18px 18px 10px;
+  color: #075985;
+}
+
+.card p {
+  margin: 0 18px 20px;
+  color: #334155;
+}
+
+.donation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donation-box {
+  width: 100%;
+  background: linear-gradient(135deg, #0ea5e9, #0369a1);
+  color: white;
+  padding: 40px 30px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(3, 105, 161, 0.25);
+}
+
+.donation-box h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 14px;
+}
+
+.donation-box p {
+  margin-bottom: 24px;
+  color: #e0f2fe;
+  font-size: 1.05rem;
+}
+
+.btn {
+  display: inline-block;
+  background: white;
+  color: #0369a1;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #e0f2fe;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    padding: 16px;
+  }
+
+  .hero-content {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 40px 0;
+  }
+
+  .donation-box {
+    padding: 28px 20px;
+  }
+}
